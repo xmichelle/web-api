@@ -4,13 +4,13 @@ const bodyParser = require('body-parser')
 
 const notes = []
 
-app.get('/', (req, res) => {
+app.get('/notes', (req, res) => {
   res.json(notes)
 })
 
 app.use(bodyParser.json())
 
-app.post('/', (req, res) => {
+app.post('/notes', (req, res) => {
   notes.push(req.body)
   res.sendStatus(201)
 })
