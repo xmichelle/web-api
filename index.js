@@ -13,3 +13,9 @@ app.listen(3000, () => {
 })
 
 app.use(bodyParser.json())
+
+app.post('/', (req, res) => {
+  console.log(req.body)
+  notes.push(req.body)
+  res.sendStatus(201)
+})
