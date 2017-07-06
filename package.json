@@ -7,7 +7,8 @@
     "lint:css": "stylelint ./**/*.css",
     "lint:js": "eslint ./**/*.js",
     "test": "npm run lint",
-    "precommit": "npm test"
+    "precommit": "npm test",
+    "watch": "nodemon index.js"
   },
   "devDependencies": {
     "eslint": "3.19.0",
@@ -19,8 +20,13 @@
     "eslint-plugin-standard": "3.0.1",
     "htmlhint": "0.9.13",
     "husky": "0.13.4",
+    "nodemon": "^1.11.0",
     "npm-run-all": "4.0.2",
     "stylelint": "7.10.1",
     "stylelint-config-standard": "16.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
   }
 }
