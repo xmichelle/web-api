@@ -11,8 +11,21 @@ app.get('/notes', (req, res) => {
 app.use(bodyParser.json())
 
 app.post('/notes', (req, res) => {
+  console.log(req.body)
   notes.push(req.body)
   res.sendStatus(201)
+})
+
+app.put('/notes/:id', (req, res) => {
+  const note = notes.find(note => {
+    return note.id === req.params.id
+  })
+  if (!note) {
+    return res.sendStatus(404)
+  }
+  Object.assign(note, req.body)
+  console.log(note)
+  res.sendStatus(200)
 })
 
 app.listen(3000, () => {
