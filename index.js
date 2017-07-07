@@ -11,7 +11,6 @@ app.get('/notes', (req, res) => {
 app.use(bodyParser.json())
 
 app.post('/notes', (req, res) => {
-  console.log(req.body)
   notes.push(req.body)
   res.sendStatus(201)
 })
@@ -24,7 +23,6 @@ app.put('/notes/:id', (req, res) => {
     return res.sendStatus(404)
   }
   Object.assign(note, req.body)
-  console.log(note)
   res.sendStatus(200)
 })
 
